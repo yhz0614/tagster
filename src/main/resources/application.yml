@@ -10,3 +10,13 @@ spring:
     password: Tagster
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+# mybatis配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.azhe.tagster.dao
+
+logging:
+  level:
+    com.azhe.tagster.mapper: debug
+
+
