@@ -1,6 +1,6 @@
 package com.azhe.tagster.service;
 
-import com.azhe.tagster.dao.business.businessUserDao;
+import com.azhe.tagster.pojo.dao.business.businessUserDao;
 
 import java.util.List;
 

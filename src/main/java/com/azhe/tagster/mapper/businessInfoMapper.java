@@ -1,6 +1,6 @@
 package com.azhe.tagster.mapper;
 
-import com.azhe.tagster.dao.business.businessUserDao;
+import com.azhe.tagster.pojo.dao.business.businessUserDao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

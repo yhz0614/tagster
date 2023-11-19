@@ -1,4 +1,4 @@
-package com.azhe.tagster.dao.label;
+package com.azhe.tagster.pojo.dao.label;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
