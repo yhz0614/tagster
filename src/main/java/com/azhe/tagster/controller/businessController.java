@@ -35,4 +35,6 @@ public class businessController {
         // 密码加密
         return ResponseEntity.ok("BusinessUser registered successfully");
     }
+
+
 }
