@@ -5,10 +5,7 @@ import com.azhe.tagster.service.businessService;
 import com.azhe.tagster.util.EncryptSha256Util;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -21,6 +18,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/business")
 @Validated
+@CrossOrigin
 public class businessController {
     @Resource
     private businessService BusinessService;

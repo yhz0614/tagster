@@ -22,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/textProject")
 @Validated
+@CrossOrigin
 public class textProjectController {
     @Resource
     private businessProjectManageService BusinessProjectManageService;
@@ -36,21 +37,21 @@ public class textProjectController {
         return Result.ok("创建成功");
     }
 
+    //上传文本文件
+
 
 
     //存储文本标注的标签字段
     @PostMapping("/getTextTag")
-    public ResponseEntity<?> registerBusiness(@RequestBody textTagDto tagInfo) {
+    public Result<?> registerBusiness(@RequestBody textTagDto tagInfo) {
         String projectName = tagInfo.getProjectName();
         List<String> tagValue = tagInfo.getTagValue();
         System.out.println(projectName);
         for (String string : tagValue) {
             System.out.println(string);
         }
-        JSONObject jsonResponseCode = new JSONObject();
-        jsonResponseCode.put("code",responseCode.SUCCESS.getCode());
-        jsonResponseCode.put("msg",responseCode.SUCCESS.getMessage());
-        return ResponseEntity.ok(jsonResponseCode);
+        return Result.ok("创建字段成功");
+
     }
 
 
