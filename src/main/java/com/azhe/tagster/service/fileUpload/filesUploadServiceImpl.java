@@ -19,13 +19,13 @@ import javax.annotation.Resource;
 public class filesUploadServiceImpl implements filesUploadService {
     @Resource
     private filesUploadMapper FilesUploadMapper;
-    public  void insertUploadFile(Integer projectId, String fileName, String fileType, String fileAddress, String Md5){
+    public  void insertUploadFile(Integer projectId, String fileName, String fileType, String fileAddress, String uuid){
         filesUploadDao filesInfo  = new filesUploadDao();
         filesInfo.setProjectId(projectId);
         filesInfo.setFileName(fileName);
         filesInfo.setFileType(fileType);
         filesInfo.setFileAddress(fileAddress);
-        filesInfo.setMd5(Md5);
+        filesInfo.setUuid(uuid);
         FilesUploadMapper.insert(filesInfo);
 
     }

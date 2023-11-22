@@ -23,17 +23,17 @@ public class filesUploadDao {
 
     private String fileAddress;
     @TableId
-    private String md5;
+    private String uuid;
 
-    private boolean isDelete;
+    private boolean deleted;
 
-    public filesUploadDao(Integer projectId, String fileName, String fileType, String fileAddress, String md5, boolean isDelete) {
+    public filesUploadDao(Integer projectId, String fileName, String fileType, String fileAddress, String uuid, boolean deleted) {
         this.projectId = projectId;
         this.fileName = fileName;
         this.fileType = fileType;
         this.fileAddress = fileAddress;
-        this.md5 = md5;
-        this.isDelete = isDelete;
+        this.uuid = uuid;
+        this.deleted = deleted;
     }
 
     public filesUploadDao() {
@@ -67,19 +67,19 @@ public class filesUploadDao {
         this.fileAddress = fileAddress;
     }
 
-    public String getMd5() {
-        return md5;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setMd5(String md5) {
-        this.md5 = md5;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
-    public boolean isDelete() {
-        return isDelete;
+    public boolean deleted() {
+        return deleted;
     }
 
-    public void setDelete(boolean delete) {
-        isDelete = delete;
+    public void setDeleted(boolean deleted) {
+        deleted = deleted;
     }
 }

@@ -50,7 +50,6 @@ public class fileUploadController {
             return Result.fail("上传失败");
         }
         //文件信息存入数据库
-        filesUploadDao filesInfo = new filesUploadDao();
         String fileAddress = "/Applications/code/java/tagster/files/uploadFiles";
         FilesUploadService.insertUploadFile(projectId,originalFilename,type,fileAddress,uuid);
         return Result.ok("上传成功");
@@ -72,6 +71,10 @@ public class fileUploadController {
             //保存文件
             try {
                 fileUploadUtil.saveFile(newFileName, file);
+                //存入文件信息到数据库
+                String fileAddress = "/Applications/code/java/tagster/files/uploadFiles";
+                FilesUploadService.insertUploadFile(projectId,originalFilename,type,fileAddress,uuid);
+
             } catch (IOException e) {
                 return Result.fail(originalFilename+"上传失败");
             }

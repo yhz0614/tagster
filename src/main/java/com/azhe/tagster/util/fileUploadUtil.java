@@ -15,7 +15,7 @@ import java.io.IOException;
 @Component
 public class fileUploadUtil {
 //    @Value("${file.upload.dir}") // 从配置文件中读取文件上传目录
-    private static final String uploadDir = "/Applications/code/java/tagster/files/uploadFiles";
+    private static final String uploadDir = "E:/IntelliJ IDEA/tagster/files/uploadFiles";
 
         public static void saveFile(String fileName, MultipartFile file) throws IOException {
             System.out.println(uploadDir);
