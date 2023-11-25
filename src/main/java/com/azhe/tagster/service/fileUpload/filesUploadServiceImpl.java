@@ -4,6 +4,7 @@ import com.azhe.tagster.mapper.filesUploadMapper;
 import com.azhe.tagster.mapper.projectManageMapper;
 import com.azhe.tagster.pojo.dao.business.businessProjectManageDao;
 import com.azhe.tagster.pojo.dao.file.filesUploadDao;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -29,4 +30,5 @@ public class filesUploadServiceImpl implements filesUploadService {
         FilesUploadMapper.insert(filesInfo);
 
     }
+
 }

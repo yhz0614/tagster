@@ -9,27 +9,40 @@ import lombok.Getter;
  * @date: 2023/11/20 19:48
  */
 @Getter
+
 @TableName("text_project_content")
-public class textProjectContentDao {
+public class TextProjectContentDao {
     /**
      * 项目id
      */
     private Integer projectId;
     /**
-     * 文本id
+     * uuid
      */
-    private Integer contentId;
+    private String uuid;
     /**
      * 文本内容
      */
     private String content;
 
-    public textProjectContentDao() {
+    public Integer getProjectId() {
+        return projectId;
     }
 
-    public textProjectContentDao(Integer projectId, Integer contentId, String content) {
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public TextProjectContentDao() {
+    }
+
+    public TextProjectContentDao(Integer projectId, String content, String uuid) {
         this.projectId = projectId;
-        this.contentId = contentId;
+        this.uuid = uuid;
         this.content = content;
     }
 
@@ -37,12 +50,11 @@ public class textProjectContentDao {
         this.projectId = projectId;
     }
 
-    public void setContentId(Integer contentId) {
-        this.contentId = contentId;
-    }
 
     public void setContent(String content) {
         this.content = content;
     }
+
+    public void setUuid(String uuid) {this.uuid = uuid; }
 
 }

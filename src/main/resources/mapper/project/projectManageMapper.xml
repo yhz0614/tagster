@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azhe.tagster.mapper.projectManageMapper">
+    <select id="selectContentByPandF" resultType="java.lang.String">
+        SELECT content from text_project_content a
+        left join upload_files b
+        on a.uuid = b.uuid
+        WHERE b.project_id = #{projectId} and file_name = #{fileName}
+    </select>
+
+</mapper>

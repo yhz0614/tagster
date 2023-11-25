@@ -1,13 +1,13 @@
 package com.azhe.tagster.controller;
 
-import cn.hutool.json.JSONObject;
-import com.azhe.tagster.enums.responseCode;
+import com.azhe.tagster.mapper.projectManageMapper;
 import com.azhe.tagster.pojo.dao.business.businessProjectManageDao;
+import com.azhe.tagster.pojo.dao.file.filesUploadDao;
 import com.azhe.tagster.pojo.dto.textTagDto;
-import com.azhe.tagster.service.businessProjectManageService;
-import com.azhe.tagster.service.businessService;
+import com.azhe.tagster.service.business.businessProjectManageService;
+import com.azhe.tagster.service.fileUpload.filesUploadService;
 import com.azhe.tagster.util.Result;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +26,10 @@ import java.util.List;
 public class textProjectController {
     @Resource
     private businessProjectManageService BusinessProjectManageService;
+    private filesUploadService FilesUploadService;
+
+    @Autowired
+    private projectManageMapper ProjectManageMapper;
     // 创建文本标注项目
     @PostMapping("/addTextProject")
     public Result<String> addTextProject(@RequestBody businessProjectManageDao textProjectInfo){
@@ -38,6 +42,16 @@ public class textProjectController {
     }
 
     //上传文本文件
+
+    //获取word或pdf中的文本
+    @PostMapping("/getContent")
+    public Result<String> getContent(@RequestBody filesUploadDao fileInfo){
+        Integer projectId = fileInfo.getProjectId();
+        String fileName =fileInfo.getFileName();
+        // 查询文件文本信息
+        return Result.ok("成功",ProjectManageMapper.selectContentByPandF(projectId,fileName));
+
+    }
 
 
 

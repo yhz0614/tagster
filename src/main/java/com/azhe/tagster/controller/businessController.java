@@ -1,7 +1,7 @@
 package com.azhe.tagster.controller;
 
 import com.azhe.tagster.pojo.dao.business.businessUserDao;
-import com.azhe.tagster.service.businessService;
+import com.azhe.tagster.service.business.businessService;
 import com.azhe.tagster.util.EncryptSha256Util;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

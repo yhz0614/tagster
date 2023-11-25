@@ -1,4 +1,4 @@
-package com.azhe.tagster.service;
+package com.azhe.tagster.service.business;
 
 import com.azhe.tagster.pojo.dao.business.businessUserDao;
 import com.azhe.tagster.mapper.businessInfoMapper;

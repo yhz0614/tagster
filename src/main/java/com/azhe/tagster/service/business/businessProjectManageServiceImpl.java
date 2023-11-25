@@ -1,8 +1,7 @@
-package com.azhe.tagster.service;
+package com.azhe.tagster.service.business;
 
 import com.azhe.tagster.mapper.projectManageMapper;
 import com.azhe.tagster.pojo.dao.business.businessProjectManageDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -27,5 +26,6 @@ public class businessProjectManageServiceImpl implements businessProjectManageSe
         ProjectManageMapper.insert(projectInfo);
 
     }
+
 
 }
