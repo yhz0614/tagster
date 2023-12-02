@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azhe.tagster.mapper.FolderManageMapper">
+    <select id="selectContentList" resultType="com.azhe.tagster.pojo.vo.FilesContentVo">
+        SELECT t3.content,t4.file_name from
+            (SELECT project_id,folder_name from project_allocation_label
+             WHERE project_id = #{projectId} and folder_name = #{folderName}
+            ) t1
+                LEFT JOIN
+                (SELECT project_id,folder_name,uuid FROM file_folder_manage)t2 ON
+                t1.project_id = t2.project_id and t1.folder_name = t2.folder_name
+                LEFT JOIN
+                (SELECT uuid,content FROM text_project_content)t3 ON
+                t2.uuid = t3.uuid
+                LEFT JOIN
+                (SELECT file_name,uuid from upload_files)t4
+                ON t2.uuid = t4.uuid
+
+    </select>
+
+</mapper>

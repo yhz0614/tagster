@@ -9,7 +9,6 @@ import lombok.Getter;
  * @date: 2023/11/20 19:48
  */
 @Getter
-
 @TableName("text_project_content")
 public class TextProjectContentDao {
     /**
@@ -24,18 +23,6 @@ public class TextProjectContentDao {
      * 文本内容
      */
     private String content;
-
-    public Integer getProjectId() {
-        return projectId;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public String getContent() {
-        return content;
-    }
 
     public TextProjectContentDao() {
     }

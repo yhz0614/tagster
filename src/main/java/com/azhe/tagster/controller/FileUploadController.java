@@ -1,23 +1,17 @@
 package com.azhe.tagster.controller;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.util.StrUtil;
-import com.azhe.tagster.pojo.dao.file.filesUploadDao;
 import com.azhe.tagster.service.fileUpload.filesUploadService;
 import com.azhe.tagster.service.textProject.TextProjectService;
 import com.azhe.tagster.util.Result;
 import com.azhe.tagster.util.extractContentUtil;
 import com.azhe.tagster.util.fileUploadUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartRequest;
 
 import javax.annotation.Resource;
-import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -30,7 +24,7 @@ import java.util.UUID;
 @RequestMapping("/upload")
 @Validated
 @CrossOrigin
-public class fileUploadController {
+public class FileUploadController {
 
     @Resource
     private fileUploadUtil FileUploadUtil;

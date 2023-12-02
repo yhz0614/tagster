@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 @RequestMapping("/business")
 @Validated
 @CrossOrigin
-public class businessController {
+public class BusinessController {
     @Resource
     private businessService BusinessService;
 

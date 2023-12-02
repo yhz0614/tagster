@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/textProject")
 @Validated
 @CrossOrigin
-public class textProjectController {
+public class TextProjectController {
     @Resource
     private businessProjectManageService BusinessProjectManageService;
     private filesUploadService FilesUploadService;
@@ -41,7 +41,6 @@ public class textProjectController {
         return Result.ok("创建成功");
     }
 
-    //上传文本文件
 
     //获取word或pdf中的文本
     @PostMapping("/getContent")
@@ -52,8 +51,6 @@ public class textProjectController {
         return Result.ok("成功",ProjectManageMapper.selectContentByPandF(projectId,fileName));
 
     }
-
-
 
     //存储文本标注的标签字段
     @PostMapping("/getTextTag")
